@@ -1,0 +1,372 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f9fdf9;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: linear-gradient(90deg, #2e7d32, #0288d1);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar .nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar .nav-links a:hover {
+  color: #ffeb3b;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url('lush-rice-paddy-field-neat-600nw-2499404003 copy.jpg') no-repeat center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 77, 64, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(90deg, #ffeb3b, #ffc107);
+  color: #222;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #ffc107, #ff9800);
+  transform: scale(1.05);
+}
+
+/* Schemes */
+.schemes-section {
+  padding: 4rem 10%;
+  background: #f1fdf1;
+  text-align: center;
+}
+
+.schemes-section h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #2e7d32;
+}
+
+.scheme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.scheme-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.scheme-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.center-btn {
+  margin-top: 2rem;
+}
+
+/* Recommendation Form */
+.recommend-section {
+  padding: 4rem 10%;
+  text-align: center;
+  background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+}
+
+.glass-form {
+  max-width: 600px;
+  margin: auto;
+  background: rgba(255,255,255,0.7);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: #2e7d32;
+}
+
+/* Results */
+.result-box {
+  margin-top: 2rem;
+  padding: 1rem;
+  display: none;
+  background: #e8f5e9;
+  border-left: 5px solid #2e7d32;
+  border-radius: 8px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* About */
+.about {
+  padding: 3rem 10%;
+  background: #fff;
+  text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #0288d1;
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(90deg, #2e7d32, #0288d1);
+  color: white;
+  text-align: center;
+  padding: 1.2rem;
+  margin-top: 2rem;
+}
+/* Chatbot Icon */
+#chatbot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(90deg, #2e7d32, #0288d1);
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Chatbot Window */
+#chatbot {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  display: none;
+  flex-direction: column;
+}
+
+.chat-header {
+  background: linear-gradient(90deg, #2e7d32, #0288d1);
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  outline: none;
+}
+
+.chat-input button {
+  background: #0288d1;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+/* Schemes Section */
+.schemes-section {
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+  text-align: center;
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #2e7d32;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.schemes-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.scheme-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 20px;
+  width: 300px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.scheme-card img {
+  width: 80px;
+  margin-bottom: 15px;
+  animation: bounce 2s infinite;
+}
+
+.scheme-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #1565c0;
+}
+
+.scheme-card p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.scheme-card .btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #2e7d32;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.scheme-card .btn:hover {
+  background: #1b5e20;
+}
+
+/* Hover Animation */
+.scheme-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.center-btn {
+  margin-top: 20px;
+}
+
+.more-btn {
+  background: #28aa31;
+}
+
+.more-btn:hover {
+  background: #056728;
+}

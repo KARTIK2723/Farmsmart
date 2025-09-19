@@ -1,0 +1,70 @@
+:root{
+  --green-900: #153d2e;
+  --green-700: #2d6a4f;
+  --green-500: #40916c;
+  --bg: #f6fff6;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --radius: 10px;
+  --maxWidth: 1100px;
+}
+
+/* Base */
+body{
+  margin:0;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: #0f172a;
+  line-height:1.5;
+}
+.container { max-width: var(--maxWidth); margin:0 auto; padding:0 1rem; }
+
+/* Navbar */
+.header-wrap { background: var(--green-700); position:sticky; top:0; z-index:100; }
+.navbar { display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; }
+.logo { color:#fff; font-weight:700; font-size:1.3rem; }
+.nav-links { list-style:none; display:flex; gap:1rem; margin:0; padding:0; }
+.nav-links a { color:#fff; text-decoration:none; font-weight:600; }
+
+/* Hero */
+.hero {
+  min-height:80vh;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; color:#fff;
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+              url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+  padding:2rem;
+}
+.hero h1 { font-size:2.5rem; margin-bottom:1rem; }
+.hero p { font-size:1.1rem; margin-bottom:1.5rem; }
+.btn { background:var(--green-500); color:#fff; padding:.7rem 1.3rem; border:none; border-radius:6px; cursor:pointer; text-decoration:none; font-weight:600; }
+.btn:hover { background:var(--green-900); }
+
+/* Recommendation */
+.recommend-section { padding:3rem 1rem; text-align:center; }
+.recommend-section h2 { margin-bottom:2rem; color:var(--green-700); }
+form {
+  display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap:1rem; max-width:700px; margin:0 auto; background:#fff; padding:2rem; border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+.form-group { display:flex; flex-direction:column; text-align:left; }
+.form-group label { margin-bottom:.4rem; font-weight:600; }
+input { padding:.6rem; border:1px solid #ccc; border-radius:6px; }
+form .btn { grid-column:1 / -1; }
+
+/* Result */
+.result-box { margin-top:1.5rem; font-size:1.2rem; font-weight:bold; color:var(--green-700); }
+
+/* About */
+.about { padding:3rem 1rem; text-align:center; background:#fff; }
+.about p { max-width:700px; margin:0 auto; color:var(--muted); }
+
+/* Footer */
+.footer { background:var(--green-700); color:#fff; text-align:center; padding:1rem; margin-top:2rem; }
+
+/* Responsive */
+@media(max-width:600px){
+  .hero h1 { font-size:1.8rem; }
+  .hero p { font-size:1rem; }
+}

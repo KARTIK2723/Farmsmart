@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FarmSmart - Crop Recommendation</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">🌾 FarmSmart</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#schemes">Schemes</a></li>
+      <li><a href="#form">Get Suggestions</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Right Crop, Right Time,<br> Better Yield</h1>
+      <p>Smart AI suggestions based on your soil & climate</p>
+      <a href="#schemes" class="btn">Get Started</a>
+    </div>
+  </section>
+
+ <section id="schemes" class="schemes-section">
+  <h2 class="section-title">🌱 Government Schemes for Farmers</h2>
+  <div class="schemes-container">
+    
+    <div class="scheme-card">
+      <img src="https://img.icons8.com/color/96/tractor.png" alt="PM-Kisan">
+      <h3>PM-Kisan Yojana</h3>
+      <p>Financial support of ₹6000 per year to farmers in 3 installments.</p>
+      <a href="https://pmkisan.gov.in/" target="_blank" class="btn">Know More</a>
+    </div>
+
+    <div class="scheme-card">
+      <img src="https://img.icons8.com/color/96/watering-can.png" alt="PMFBY">
+      <h3>Pradhan Mantri Fasal Bima Yojana</h3>
+      <p>Crop insurance to protect farmers against natural calamities & crop loss.</p>
+      <a href="https://pmfby.gov.in/" target="_blank" class="btn">Know More</a>
+    </div>
+
+    <div class="scheme-card">
+      <img src="https://img.icons8.com/color/96/organic-food.png" alt="Soil Health">
+      <h3>Soil Health Card</h3>
+      <p>Helps farmers analyze soil quality & suggests crop-specific nutrients.</p>
+      <a href="https://soilhealth.dac.gov.in/" target="_blank" class="btn">Know More</a>
+    </div>
+  </div>
+
+  <!-- View More Button -->
+  <div class="center-btn">
+    <a href="schemes.html" class="btn more-btn">View More Schemes</a>
+  </div>
+</section>
+
+
+
+  <!-- Recommendation Form -->
+  <section id="form" class="recommend-section">
+    <h2>Get Crop Recommendation</h2>
+    <form id="cropForm" class="glass-form">
+      <div class="form-group">
+        <label for="location">Location (District)</label>
+        <input type="text" id="location" name="location" placeholder="Enter your district" required>
+      </div>
+
+      <div class="form-group">
+        <label for="rainfall">Rainfall</label>
+        <select id="rainfall" name="rainfall" required>
+          <option value="">--Select Rainfall--</option>
+          <option value="low">Low (&lt; 800 mm)</option>
+          <option value="medium">Medium (800–1500 mm)</option>
+          <option value="high">High (&gt; 1500 mm)</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn">Get Recommendation</button>
+    </form>
+    <div id="result" class="result-box"></div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <h2>About FarmSmart</h2>
+    <p>
+      FarmSmart empowers farmers with AI-driven insights to choose the right crops, 
+      improve yield, and ensure sustainable farming practices for a brighter future.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <h2>Contact Us</h2>
+    <p>📍 Address: Galgotias University, Uttar Pradesh, India</p>
+    <p>📧 Email: support@farmsmart.in</p>
+    <p>&copy; 2025 FarmSmart. All rights reserved.</p>
+  </footer>
+
+  <!-- Chatbot Button -->
+  <div id="chatbot-icon">💬</div>
+
+  <!-- Chatbot Window -->
+  <div id="chatbot">
+    <div class="chat-header">🌾 FarmSmart AI</div>
+    <div id="chat-messages"></div>
+    <div class="chat-input">
+      <input type="text" id="user-input" placeholder="Ask about crops...">
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+
+  <script src="chatbot.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
+ 

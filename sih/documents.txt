@@ -1,0 +1,4 @@
+FarmSmart helps farmers improve crop yield using AI-based recommendations.
+Our platform suggests irrigation schedules based on weather forecasts.
+We provide personalized fertilizer recommendations for different soil types.
+FarmSmart also tracks pest infestations and suggests eco-friendly solutions.

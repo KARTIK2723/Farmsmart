@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FarmSmart Chatbot</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    #chatbox { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: scroll; }
+    .user { color: blue; margin: 5px 0; }
+    .bot { color: green; margin: 5px 0; }
+    input { padding: 5px; width: 80%; }
+    button { padding: 5px; }
+  </style>
+</head>
+<body>
+  <h2>🌱 FarmSmart AI Chatbot</h2>
+  <div id="chatbox"></div>
+  <input type="text" id="userInput" placeholder="Type your message..." />
+  <button onclick="sendMessage()">Send</button>
+
+  <script>
+   async function sendMessage() {
+  let userMessage = document.getElementById("userInput").value;
+  document.getElementById("chatbox").innerHTML += `<p><b>You:</b> ${userMessage}</p>`;
+
+  try {
+    let res = await fetch("http://127.0.0.1:5000/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: userMessage })
+    });
+
+    let data = await res.json();
+    if (data.reply) {
+      document.getElementById("chatbox").innerHTML += `<p><b>Bot:</b> ${data.reply}</p>`;
+    } else {
+      document.getElementById("chatbox").innerHTML += `<p><b>Bot:</b> ⚠️ Error: ${data.error || "No reply"}</p>`;
+    }
+  } catch (err) {
+    document.getElementById("chatbox").innerHTML += `<p><b>Bot:</b> ⚠️ ${err}</p>`;
+  }
+  
+
+  async function getSoil(district) {
+  const response = await fetch("http://127.0.0.1:5000/get_soil", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ district })
+  });
+
+  const data = await response.json();
+  return data.soil;
+}
+
+// Example usage
+async function askSoil() {
+  let district = document.getElementById("districtInput").value;
+  let soil = await getSoil(district);
+  document.getElementById("response").innerText =
+    `Soil type in ${district}: ${soil}`;
+}
+
+}
+
+  </script>
+</body>
+</html>
